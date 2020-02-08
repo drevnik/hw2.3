@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/cpadnhausjk7jwoa?svg=true)](https://ci.appveyor.com/project/drevnik/aqa-selenide-mfchr)
+[![Build status](https://ci.appveyor.com/api/projects/status/e9tpnok60ot5jn61?svg=true)](https://ci.appveyor.com/project/drevnik/hw2-3)
 
 
 Необходимо автоматизировать тестирование новой функции формы заказа доставки карты.
