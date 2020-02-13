@@ -4,6 +4,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -20,10 +21,15 @@ public class CardDeliveryTest {
         SelenideLogger.removeListener("allure");
     }
 
+    @BeforeEach
+    void openHost() {
+
+        open("http://localhost:9999/");
+    }
+
     @Test
     @DisplayName("Отображается уведомление 'Успешно', если все поля заполнены валидными данными")
     void shouldBeSuccessIfDataIsValid() {
-        open("http://localhost:9999/");
 
         UserInfo validUser = DataGenerator.createValidUserInfo();
 
@@ -38,7 +44,6 @@ public class CardDeliveryTest {
     @Test
     @DisplayName("Отображается уведомление 'Перепланировать', если изменена дата")
     void planAgainIfDateWasChanged() {
-        open("http://localhost:9999/");
 
         UserInfo validUser = DataGenerator.createValidUserInfo();
         $("[data-test-id=city] input").setValue(validUser.getCity());
